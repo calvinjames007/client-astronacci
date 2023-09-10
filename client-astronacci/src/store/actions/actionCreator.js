@@ -1,3 +1,5 @@
+import axios from "axios";
+
 const DATABASE_URL = "http://localhost:3000";
 
 export const AddNewUser = (addUser, navigate) => {
@@ -44,6 +46,9 @@ export const LoginUser = (dataUser, navigate) => {
             // Menaruh access token ke localStorage pada browser
             if (userLogin && userLogin.accessToken) {
                 localStorage.setItem('access_token', userLogin.accessToken);
+                localStorage.setItem('firstName', userLogin.firstName);
+                localStorage.setItem('lastName', userLogin.lastName);
+                localStorage.setItem('status', userLogin.status);
             }
         }
         catch (error) {
@@ -67,7 +72,6 @@ export const fetchVideo = () => {
                     type: "FETCH_VIDEO_SUCCESS",
                     payload: jsonData
                 }
-                console.log(jsonData, "<<<<< ini jsonData")
                 dispatch(action)
             }
             fetchVideo();
@@ -77,3 +81,4 @@ export const fetchVideo = () => {
         }
     }
 }
+

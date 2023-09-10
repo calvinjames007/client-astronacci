@@ -8,6 +8,7 @@ import { useState } from "react";
 import { LoginUser } from "../store/actions/actionCreator";
 
 export default function loginPage() {
+    const clientId = '984916635721-ktfvobdcljscus925lq9f2kgkb6q03rb.apps.googleusercontent.com'
     const navigate = useNavigate()
     const dispatch = useDispatch()
     
